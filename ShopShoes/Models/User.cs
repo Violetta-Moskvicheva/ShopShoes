@@ -17,7 +17,7 @@ public partial class User
 
     public int IdRoles { get; set; }
 
-    public virtual Role IdRolesNavigation { get; set; } = null!;
+    public virtual Role Role { get; set; } = null!;
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

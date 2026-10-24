@@ -13,9 +13,9 @@ public partial class StockItem
 
     public int Count { get; set; }
 
-    public virtual Product IdProductNavigation { get; set; } = null!;
+    public virtual Product Product { get; set; } = null!;
 
-    public virtual Size IdSizeNavigation { get; set; } = null!;
+    public virtual Size Size { get; set; } = null!;
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

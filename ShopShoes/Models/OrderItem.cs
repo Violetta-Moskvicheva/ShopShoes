@@ -14,7 +14,7 @@ public partial class OrderItem
 
     public int Count { get; set; }
 
-    public virtual Order IdOrderNavigation { get; set; } = null!;
+    public virtual Order Order { get; set; } = null!;
 
-    public virtual StockItem IdStockItemNavigation { get; set; } = null!;
+    public virtual StockItem StockItem { get; set; } = null!;
 }

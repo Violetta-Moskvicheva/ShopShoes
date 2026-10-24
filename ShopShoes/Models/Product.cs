@@ -24,11 +24,11 @@ public partial class Product
 
     public int IdSubcategory { get; set; }
 
-    public virtual Category IdCategoryNavigation { get; set; } = null!;
+    public virtual Category Category { get; set; } = null!;
 
-    public virtual Manufacturer IdManufacturerNavigation { get; set; } = null!;
+    public virtual Manufacturer Manufacturer { get; set; } = null!;
 
-    public virtual Subcategory IdSubcategoryNavigation { get; set; } = null!;
+    public virtual Subcategory Subcategory { get; set; } = null!;
 
     public virtual ICollection<StockItem> StockItems { get; set; } = new List<StockItem>();
 }

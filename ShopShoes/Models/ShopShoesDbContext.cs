@@ -73,7 +73,7 @@ public partial class ShopShoesDbContext : DbContext
             entity.Property(e => e.Date).HasColumnName("date");
             entity.Property(e => e.IdUser).HasColumnName("id_user");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Orders)
+            entity.HasOne(d => d.User).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("orders_id_user_fkey");
@@ -90,12 +90,12 @@ public partial class ShopShoesDbContext : DbContext
             entity.Property(e => e.IdOrder).HasColumnName("id_order");
             entity.Property(e => e.IdStockItem).HasColumnName("id_stock_item");
 
-            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.OrderItems)
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.IdOrder)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("order_items_id_order_fkey");
 
-            entity.HasOne(d => d.IdStockItemNavigation).WithMany(p => p.OrderItems)
+            entity.HasOne(d => d.StockItem).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.IdStockItem)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("order_items_id_stock_item_fkey");
@@ -117,17 +117,17 @@ public partial class ShopShoesDbContext : DbContext
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Price).HasColumnName("price");
 
-            entity.HasOne(d => d.IdCategoryNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdCategory)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("products_id_category_fkey");
 
-            entity.HasOne(d => d.IdManufacturerNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.Manufacturer).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdManufacturer)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("products_id_manufacturer_fkey");
 
-            entity.HasOne(d => d.IdSubcategoryNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.Subcategory).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdSubcategory)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("products_id_subcategory_fkey");
@@ -164,12 +164,12 @@ public partial class ShopShoesDbContext : DbContext
             entity.Property(e => e.IdProduct).HasColumnName("id_product");
             entity.Property(e => e.IdSize).HasColumnName("id_size");
 
-            entity.HasOne(d => d.IdProductNavigation).WithMany(p => p.StockItems)
+            entity.HasOne(d => d.Product).WithMany(p => p.StockItems)
                 .HasForeignKey(d => d.IdProduct)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("stock_item_id_product_fkey");
 
-            entity.HasOne(d => d.IdSizeNavigation).WithMany(p => p.StockItems)
+            entity.HasOne(d => d.Size).WithMany(p => p.StockItems)
                 .HasForeignKey(d => d.IdSize)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("stock_item_id_size_fkey");
@@ -200,7 +200,7 @@ public partial class ShopShoesDbContext : DbContext
             entity.Property(e => e.Login).HasColumnName("login");
             entity.Property(e => e.MiddleName).HasColumnName("middle_name");
 
-            entity.HasOne(d => d.IdRolesNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRoles)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("users_id_roles_fkey");
