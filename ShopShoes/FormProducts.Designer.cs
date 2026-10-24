@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pnTop = new Panel();
-            btnLogout = new Button();
             lbUserName = new Label();
+            btnLogout = new Button();
             dgvProducts = new DataGridView();
             pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
@@ -49,6 +49,17 @@
             pnTop.Size = new Size(894, 40);
             pnTop.TabIndex = 0;
             // 
+            // lbUserName
+            // 
+            lbUserName.AutoSize = true;
+            lbUserName.Dock = DockStyle.Right;
+            lbUserName.Location = new Point(759, 0);
+            lbUserName.Name = "lbUserName";
+            lbUserName.Size = new Size(49, 19);
+            lbUserName.TabIndex = 2;
+            lbUserName.Text = "label1";
+            lbUserName.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(112, 178, 175);
@@ -62,34 +73,25 @@
             btnLogout.TabIndex = 0;
             btnLogout.Text = "Выйти";
             btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // lbUserName
-            // 
-            lbUserName.AutoSize = true;
-            lbUserName.Dock = DockStyle.Right;
-            lbUserName.Location = new Point(759, 0);
-            lbUserName.Name = "lbUserName";
-            lbUserName.Size = new Size(49, 19);
-            lbUserName.TabIndex = 2;
-            lbUserName.Text = "label1";
-            lbUserName.TextAlign = ContentAlignment.MiddleRight;
+            btnLogout.Click += btnLogout_Click;
             // 
             // dgvProducts
             // 
             dgvProducts.AllowUserToAddRows = false;
             dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProducts.BackgroundColor = Color.White;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.Dock = DockStyle.Fill;
             dgvProducts.Location = new Point(10, 50);
             dgvProducts.Margin = new Padding(3, 4, 3, 4);
@@ -114,6 +116,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormProducts";
             Padding = new Padding(10);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список товаров";
             pnTop.ResumeLayout(false);
             pnTop.PerformLayout();

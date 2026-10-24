@@ -13,6 +13,8 @@ public partial class User
 
     public string? MiddleName { get; set; }
 
+    public string FullName => $"{LastName} {FirstName} {MiddleName}";
+
     public string Login { get; set; } = null!;
 
     public int IdRoles { get; set; }

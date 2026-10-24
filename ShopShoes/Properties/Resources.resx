@@ -117,4 +117,101 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IMG_KB_164811" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KB_164811.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KB_164816" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KB_164816.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KB_185501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KB_185501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KSd_185508" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KSd_185508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KSd_195207" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KSd_195207.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KSho_185512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KSho_185512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KS_195213" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KS_195213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KS_195217" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KS_195217.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_KS_195222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_KS_195222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MB_174349" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MB_174349.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MB_191200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MB_191200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MB_191205" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MB_191205.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MSho_190514" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MSho_190514.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MSho_190518" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MSho_190518.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MSho_191612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MSho_191612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MS_185531" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MS_185531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MS_185532" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MS_185532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_MS_185533" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_MS_185533.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WB_170859" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WB_170859.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WB_170905" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WB_170905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WB_170906" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WB_170906.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSd_174332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSd_174332.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSd_185156" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSd_185156.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSd_185551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSd_185551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSho_174409" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSho_174409.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSho_185202" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSho_185202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WSho_185545" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WSho_185545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WS_174110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WS_174110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WS_185528" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WS_185528.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WS_185535" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WS_185535.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_WS_185538" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_WS_185538.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
