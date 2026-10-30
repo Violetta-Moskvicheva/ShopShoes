@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducts));
             pnTop = new Panel();
             lbUserName = new Label();
             btnLogout = new Button();
@@ -113,6 +114,7 @@
             Controls.Add(pnTop);
             Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormProducts";
             Padding = new Padding(10);

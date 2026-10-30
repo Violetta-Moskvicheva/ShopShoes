@@ -33,7 +33,16 @@ namespace ShopShoes
 
             CurrentUser = user;
             IsGuest = guest;
-            lbUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
+
+            if (IsGuest)
+            {
+                lbUserName.Text = "Гость";
+                btnLogout.Text = " Назад";
+            } else
+            {
+                lbUserName.Text = CurrentUser.FullName;
+            }
+            
 
             LoadProducts();
          }
@@ -50,6 +59,8 @@ namespace ShopShoes
                         .Include(i => i.Subcategory)
                         .Include(i => i.Manufacturer)
                         .Include(i => i.StockItems)
+                            .ThenInclude(oi => oi.OrderItems)
+                                .ThenInclude(o => o.Order)
                         .ToList();
 
                     dgvProducts.SuspendLayout();
@@ -57,18 +68,35 @@ namespace ShopShoes
 
                     foreach(var product in products)
                     {
-                        //decimal discountAmount = product.Price * 0.25m;
-                        //decimal finalPrice = product.Price - discountAmount;
+                        DateTime now = DateTime.Now;
+                        DateTime startOfCurrentMonth = new DateTime(now.Year, now.Month, 1);
+                        DateTime startOfPreMonth = startOfCurrentMonth.AddMonths(-1);
+
+                        var stockItems = product.StockItems ?? Enumerable.Empty<StockItem>();
+
+
+                        bool hasOrdersInPrevMonth = stockItems
+                            .SelectMany(si => si.OrderItems ?? Enumerable.Empty<OrderItem>())
+                            .Where(oi => oi.Order != null)
+                            .Select(oi => oi.Order.Date)
+                            .Any(d => d >= startOfPreMonth && d < startOfCurrentMonth);
+
+                        decimal finalPrice = hasOrdersInPrevMonth
+                            ? product.Price
+                            : product.Price - (product.Price * 0.25m); 
 
                         int rowIndex = dgvProducts.Rows.Add();
                         var row = dgvProducts.Rows[rowIndex];
 
                         row.Cells["colPhoto"].Value = LoadProductImage(product.Img);
                         row.Cells["colInfo"].Value = FormatProductInfo(product);
-                        row.Cells["colPrice"].Value = $"{product.Price:C}";
+                        row.Cells["colPrice"].Value = $"{finalPrice:C}";
 
                         ApplyRowStyles(row, product);
                     }
+
+                    
+
                     dgvProducts.ResumeLayout();
                     dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
                 }
@@ -99,15 +127,23 @@ namespace ShopShoes
         private string FormatProductInfo(Product product)
         {
             int totalStock = 0;
+            string totalStockStatus = null;
 
             if (product.StockItems != null)
             {
                 totalStock = product.StockItems.Sum(s => s.Count);
+                if (totalStock > 5)
+                {
+                    totalStockStatus = "много";
+                } else
+                {
+                    totalStockStatus = "мало";
+                }
             }
 
             return $"{product.Manufacturer?.Name} | {product.Name}" + Environment.NewLine +
                $"Категория: {product.Category?.Name}" + Environment.NewLine +
-               $"Количество: {totalStock}" + Environment.NewLine +
+               $"Количество: {totalStockStatus}" + Environment.NewLine +
                $"Состав: {product.Compound}";
 
         }
