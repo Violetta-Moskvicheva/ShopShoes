@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopShoes.Models;
-using ShopShoes.Properties;
 
 namespace ShopShoes
 {
@@ -27,7 +26,6 @@ namespace ShopShoes
             
             LoadProducts();
          }
-
 
         private void LoadProducts()
         {
