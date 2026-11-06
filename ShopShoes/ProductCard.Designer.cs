@@ -73,7 +73,7 @@
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Location = new Point(161, 42);
+            lblCategory.Location = new Point(161, 33);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(63, 14);
             lblCategory.TabIndex = 3;
@@ -82,7 +82,7 @@
             // lblCount
             // 
             lblCount.AutoSize = true;
-            lblCount.Location = new Point(161, 71);
+            lblCount.Location = new Point(161, 62);
             lblCount.Name = "lblCount";
             lblCount.Size = new Size(69, 14);
             lblCount.TabIndex = 4;
@@ -91,7 +91,7 @@
             // lblCompound
             // 
             lblCompound.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblCompound.Location = new Point(161, 97);
+            lblCompound.Location = new Point(161, 88);
             lblCompound.Name = "lblCompound";
             lblCompound.Size = new Size(618, 32);
             lblCompound.TabIndex = 5;
