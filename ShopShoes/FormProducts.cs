@@ -22,6 +22,7 @@ namespace ShopShoes
             var colInfo = new DataGridViewTextBoxColumn();
             colInfo.Name = "colInfo";
             colInfo.FillWeight = 60;
+            //автоматический перенос строк по словам в ячейках указаного столбца
             colInfo.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             var colPrice = new DataGridViewTextBoxColumn();
@@ -63,23 +64,25 @@ namespace ShopShoes
                                 .ThenInclude(o => o.Order)
                         .ToList();
 
+                    DateTime now = DateTime.Now;
+                    //первое число тек месяца
+                    DateTime startOfCurrentMonth = new DateTime(now.Year, now.Month, 1);
+                    //первое число прошлого песяца
+                    DateTime startOfPreMonth = startOfCurrentMonth.AddMonths(-1);
+
                     dgvProducts.SuspendLayout();
                     dgvProducts.Rows.Clear();
 
                     foreach(var product in products)
                     {
-                        DateTime now = DateTime.Now;
-                        DateTime startOfCurrentMonth = new DateTime(now.Year, now.Month, 1);
-                        DateTime startOfPreMonth = startOfCurrentMonth.AddMonths(-1);
-
-                        var stockItems = product.StockItems ?? Enumerable.Empty<StockItem>();
-
-
-                        bool hasOrdersInPrevMonth = stockItems
-                            .SelectMany(si => si.OrderItems ?? Enumerable.Empty<OrderItem>())
-                            .Where(oi => oi.Order != null)
-                            .Select(oi => oi.Order.Date)
-                            .Any(d => d >= startOfPreMonth && d < startOfCurrentMonth);
+                        //ищем, были ли заказы по этому товару в прошлом месяце
+                        bool hasOrdersInPrevMonth = product.StockItems?
+                            //перебираем все склады, на которых лежит тек товар
+                            .Any(si => si.OrderItems?
+                                //ищем хотя бы одну покупку за прошлый месяц
+                                .Any(oi => oi.Order != null &&
+                                   oi.Order.Date >= startOfPreMonth &&
+                                   oi.Order.Date < startOfCurrentMonth) ?? false) ?? false;
 
                         decimal finalPrice = hasOrdersInPrevMonth
                             ? product.Price
@@ -94,9 +97,6 @@ namespace ShopShoes
 
                         ApplyRowStyles(row, product);
                     }
-
-                    
-
                     dgvProducts.ResumeLayout();
                     dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
                 }
@@ -176,7 +176,6 @@ namespace ShopShoes
             this.Close();
         }
 
-        //обработка закрытия формы
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
