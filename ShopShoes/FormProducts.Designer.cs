@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducts));
             pnTop = new Panel();
             lbUserName = new Label();
             btnLogout = new Button();
-            dgvProducts = new DataGridView();
+            flpProducts = new FlowLayoutPanel();
             pnTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
             // 
             // pnTop
             // 
+            pnTop.BackColor = Color.FromArgb(210, 246, 231);
             pnTop.Controls.Add(lbUserName);
             pnTop.Controls.Add(btnLogout);
             pnTop.Dock = DockStyle.Top;
-            pnTop.Location = new Point(10, 10);
-            pnTop.Margin = new Padding(3, 4, 3, 4);
+            pnTop.Location = new Point(0, 0);
+            pnTop.Margin = new Padding(0);
             pnTop.Name = "pnTop";
             pnTop.Padding = new Padding(0, 0, 0, 10);
-            pnTop.Size = new Size(894, 40);
+            pnTop.Size = new Size(925, 40);
             pnTop.TabIndex = 0;
             // 
             // lbUserName
             // 
             lbUserName.AutoSize = true;
             lbUserName.Dock = DockStyle.Right;
-            lbUserName.Location = new Point(759, 0);
+            lbUserName.Location = new Point(790, 0);
             lbUserName.Name = "lbUserName";
             lbUserName.Size = new Size(49, 19);
             lbUserName.TabIndex = 2;
@@ -67,7 +66,7 @@
             btnLogout.Dock = DockStyle.Right;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Location = new Point(808, 0);
+            btnLogout.Location = new Point(839, 0);
             btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(86, 30);
@@ -76,53 +75,33 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // dgvProducts
+            // flpProducts
             // 
-            dgvProducts.AllowUserToAddRows = false;
-            dgvProducts.AllowUserToDeleteRows = false;
-            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvProducts.BackgroundColor = Color.White;
-            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducts.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle1;
-            dgvProducts.Dock = DockStyle.Fill;
-            dgvProducts.Location = new Point(10, 50);
-            dgvProducts.Margin = new Padding(3, 4, 3, 4);
-            dgvProducts.MultiSelect = false;
-            dgvProducts.Name = "dgvProducts";
-            dgvProducts.ReadOnly = true;
-            dgvProducts.RowHeadersVisible = false;
-            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(894, 510);
-            dgvProducts.TabIndex = 1;
+            flpProducts.AutoScroll = true;
+            flpProducts.Dock = DockStyle.Fill;
+            flpProducts.FlowDirection = FlowDirection.TopDown;
+            flpProducts.Location = new Point(0, 40);
+            flpProducts.Name = "flpProducts";
+            flpProducts.Size = new Size(925, 530);
+            flpProducts.TabIndex = 1;
+            flpProducts.WrapContents = false;
             // 
             // FormProducts
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(914, 570);
-            Controls.Add(dgvProducts);
+            ClientSize = new Size(925, 570);
+            Controls.Add(flpProducts);
             Controls.Add(pnTop);
             Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormProducts";
-            Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Список товаров";
             pnTop.ResumeLayout(false);
             pnTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ResumeLayout(false);
         }
 
@@ -131,6 +110,6 @@
         private Panel pnTop;
         private Label lbUserName;
         private Button btnLogout;
-        private DataGridView dgvProducts;
+        private FlowLayoutPanel flpProducts;
     }
 }

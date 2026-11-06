@@ -13,25 +13,6 @@ namespace ShopShoes
         {
             InitializeComponent();
 
-            var colPhoto = new DataGridViewImageColumn();
-            colPhoto.Name = "colPhoto";
-            colPhoto.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            colPhoto.Width = 200;
-            colPhoto.FillWeight = 30;
-
-            var colInfo = new DataGridViewTextBoxColumn();
-            colInfo.Name = "colInfo";
-            colInfo.FillWeight = 60;
-            //автоматический перенос строк по словам в ячейках указаного столбца
-            colInfo.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-            var colPrice = new DataGridViewTextBoxColumn();
-            colPrice.Name = "colPrice";
-            colPrice.FillWeight = 15;
-            colPrice.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            dgvProducts.Columns.AddRange([colPhoto, colInfo, colPrice]);
-
             CurrentUser = user;
             IsGuest = guest;
 
@@ -44,7 +25,6 @@ namespace ShopShoes
                 lbUserName.Text = CurrentUser.FullName;
             }
             
-
             LoadProducts();
          }
 
@@ -64,14 +44,14 @@ namespace ShopShoes
                                 .ThenInclude(o => o.Order)
                         .ToList();
 
-                    DateTime now = DateTime.Now;
+                    DateTime today = DateTime.Today;
                     //первое число тек месяца
-                    DateTime startOfCurrentMonth = new DateTime(now.Year, now.Month, 1);
+                    DateTime startOfCurrentMonth = new DateTime(today.Year, today.Month, 1);
                     //первое число прошлого песяца
                     DateTime startOfPreMonth = startOfCurrentMonth.AddMonths(-1);
 
-                    dgvProducts.SuspendLayout();
-                    dgvProducts.Rows.Clear();
+                    flpProducts.SuspendLayout();
+                    flpProducts.Controls.Clear();
 
                     foreach(var product in products)
                     {
@@ -86,19 +66,15 @@ namespace ShopShoes
 
                         decimal finalPrice = hasOrdersInPrevMonth
                             ? product.Price
-                            : product.Price - (product.Price * 0.25m); 
+                            : product.Price - (product.Price * 0.25m);
 
-                        int rowIndex = dgvProducts.Rows.Add();
-                        var row = dgvProducts.Rows[rowIndex];
+                        ProductCard card = new ProductCard();
 
-                        row.Cells["colPhoto"].Value = LoadProductImage(product.Img);
-                        row.Cells["colInfo"].Value = FormatProductInfo(product);
-                        row.Cells["colPrice"].Value = $"{finalPrice:C}";
+                        card.ProductCard_Load(product, finalPrice);
 
-                        ApplyRowStyles(row, product);
+                        flpProducts.Controls.Add(card);
                     }
-                    dgvProducts.ResumeLayout();
-                    dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+                    flpProducts.ResumeLayout();
                 }
             }
 
@@ -106,67 +82,6 @@ namespace ShopShoes
             {
                 MessageBox.Show($"{ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private Image LoadProductImage(string Img)
-        {
-            if (!String.IsNullOrEmpty(Img))
-            {
-                string resourceName = Path.GetFileNameWithoutExtension(Img).Trim();
-
-                var rm = Properties.Resources.ResourceManager;
-                var img = rm.GetObject(resourceName) as Image;
-
-                return img;
-            }
-
-            return Resources.picture;
-        }
-
-        private string FormatProductInfo(Product product)
-        {
-            int totalStock = 0;
-            string totalStockStatus = null;
-
-            if (product.StockItems != null)
-            {
-                totalStock = product.StockItems.Sum(s => s.Count);
-                if (totalStock > 5)
-                {
-                    totalStockStatus = "много";
-                } else
-                {
-                    totalStockStatus = "мало";
-                }
-            }
-
-            return $"{product.Manufacturer?.Name} | {product.Name}" + Environment.NewLine +
-               $"Категория: {product.Category?.Name}" + Environment.NewLine +
-               $"Количество: {totalStockStatus}" + Environment.NewLine +
-               $"Состав: {product.Compound}";
-
-        }
-
-        private void ApplyRowStyles(DataGridViewRow row, Product product)
-        {
-            int totalStock = 0;
-
-            if (product.StockItems != null)
-            {
-                totalStock = product.StockItems.Sum(s => s.Count);
-            }
-
-
-            if (totalStock <= 3)
-            {
-                row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FF8080");
-                row.DefaultCellStyle.ForeColor = Color.Black;
-            }
-            else
-            {
-                row.DefaultCellStyle.BackColor = Color.White;
-                row.DefaultCellStyle.ForeColor = Color.Black;
             }
         }
 
